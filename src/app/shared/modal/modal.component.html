@@ -1,0 +1,23 @@
+<div class="modal fade in" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="myModalLabel"><strong>{{titleContent}}</strong></h6>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closePopup()"><span
+                        aria-hidden="true">&times;</span></button> -->
+            </div>
+            <div class="modal-body">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <p>{{bodyContent}}</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm font-size-12 custom-btn btn-ok proceed-btn"
+                    (click)="saveChanges($event)">{{footerSaveButtonContent}}</button>
+                <button type="button" class="btn btn-sm font-size-12 custom-btn btn-default btn-cancel" (click)="closePopup()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

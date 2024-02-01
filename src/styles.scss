@@ -1,0 +1,163 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ag-grid-community/styles//ag-grid.css";
+@import "~ag-grid-community/styles//ag-theme-alpine.css";
+
+body {
+    font-style: "Open Sans", sans-serif;
+}
+
+.dark-mode {
+    // background-color: black !important;
+    color: white;
+}
+
+.ag-paging-panel {
+    top: 6rem !important;
+    position: fixed !important;
+    right: 3% !important;
+    border: none !important;
+}
+
+.nav {
+    transition: none !important;
+}
+
+body.dark-mode .sidebar {
+    background-color: #37404a !important;
+    color: #fff !important;
+}
+
+.dark-mode #a-main-container {
+    background-color: #3c4146;
+}
+
+.i2i-blue {
+    .sidebar {
+        background-color: #2f3aa2 !important;
+        color: #fff !important;
+    }
+
+    #a-main-container {
+        background-color: #9ea5e0;
+    }
+
+    .selected {
+        background-color: #121d5b !important;
+    }
+
+    .nav-item .sub-heading:hover {
+        border: .5px solid;
+        border-radius: 10px;
+    }
+
+    .sub-header-selected {
+        background-color: #121d5b !important;
+    }
+
+    .sub-header-selected .selected {
+        background-color: #4c63e2 !important;
+    }
+}
+
+.green {
+    .sidebar {
+        background-color: #3ca877 !important;
+        color: #fff !important;
+    }
+
+    #a-main-container {
+        background-color: #b7f5d9;
+    }
+
+    .selected {
+        border: .5px solid !important;
+        color: #000 !important;
+        background-color: #2b8b48 !important;
+    }
+
+    .nav-item .sub-heading:hover {
+        border: .5px solid;
+        // border-radius: 10px;
+        color: #000 !important;
+        background-color: #bbe3c7 !important;
+        // color: ;
+    }
+
+    .sub-header-selected {
+        // background-color: #2b8b48 !important;
+        background: none !important;
+    }
+
+
+
+    .sub-header-selected .selected {
+        border: .5px solid !important;
+        color: #000 !important;
+        background-color: #2b8b48 !important;
+    }
+}
+
+.blue {
+    .sidebar {
+        background-color: #fff !important;
+        color: #000 !important;
+    }
+
+    // #a-main-container {
+    //     background-color: #9ea5e0;
+    // }
+
+    .selected {
+        background-color: #2f3aa2 !important;
+    }
+
+    .nav-item .sub-heading:hover {
+        color: #000 !important;
+        background-color: #dfe3ee !important;
+    }
+
+    .sub-header-selected {
+        // background-color: #121d5b !important;
+        background: none !important;
+    }
+
+    .selected:hover {
+        background: none !important;
+    }
+
+    .sub-header-selected .selected {
+        background-color: #8088cd !important;
+    }
+
+    .sub-header-selected a.sub-heading {
+        background-color: #47509d !important;
+        color: #fff;
+    }
+}
+
+
+
+// .green .sidebar {
+//     background-color: #3ca877 !important;
+//     color: #fff !important;
+// }
+
+// .green #a-main-container {
+//     background-color: #b7f5d9;
+// }
+
+
+// .green .selected {
+//     border: .5px solid !important;
+//     color: #000 !important;
+//     background-color: #2b8b48 !important;
+// }
+
+// .green .nav-item .sub-heading:hover:not(.selected.sub-heading) {
+//     border: .5px solid;
+//     // border-radius: 10px;
+//     color: #000;
+//     background-color: #bbe3c7;
+
+//     // color: ;
+// }

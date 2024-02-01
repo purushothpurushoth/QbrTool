@@ -1,0 +1,8 @@
+{
+  "realm": "QBR-Tool-Latest",
+  "auth-server-url": "https://rocketforward.live/keycloak/",
+  "ssl-required": "external",
+  "resource": "qbr_tool",
+  "public-client": true,
+  "confidential-port": 0
+}

@@ -1,0 +1,455 @@
+<div class="inner-sidenav" *ngIf="sideBarStatus">
+  <div style="padding: 5px; width: 12rem" (click)="clearSelection()">
+    <img
+      src="../../assets/Ideas2ITLogo.svg"
+      alt="Ideas2IT"
+      style="height: 2rem; cursor: pointer; font-size: 16px; margin-left: 8px"
+      routerLink="/home"
+      routerLinkActive="active"
+      *ngIf="sideBarStatus"
+    />
+  </div>
+  <div class="sub-heading" style="margin-bottom: 1rem; margin-top: 1rem">
+    <li
+      class="nav-item"
+      (click)="changeMainNavColor('')"
+      routerLink="/home"
+      routerLinkActive="active"
+      (click)="clearSelection()"
+      [ngClass]="'/home' === routerUrl ? 'selected' : ''"
+    >
+      <a class="nav-link sub-heading" style="cursor: pointer">
+        <span class="d-sm-inline" style="font-weight: 600">
+          <i
+            class="fa fa-home"
+            style="width: 1.5rem; padding-left: 0.6rem; font-size: 18px"
+          ></i>
+          <a
+            routerLink="/home"
+            routerLinkActive="active"
+            *ngIf="sideBarStatus"
+            style="text-decoration: none; color: inherit; padding-left: 0.6rem"
+            >Home</a
+          >
+        </span>
+      </a>
+    </li>
+  </div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem">
+    <p
+      style="color: #adb5bd; font-weight: 600; padding-left: 0.5rem"
+      *ngIf="sideBarStatus"
+    >
+      Menus
+    </p>
+    <div>
+      <li class="nav-item">
+        <div
+          style="width: 14rem"
+          [ngClass]="{ 'sub-header-selected': subheader1 }"
+        >
+          <a
+            href="#submenu1"
+            data-bs-toggle="collapse"
+            class="nav-link px-0 sub-heading"
+            style="justify-content: space-between; display: flex"
+          >
+            <span class="d-sm-inline" style="font-weight: 600">
+              <i
+                class="fa fa-dashboard"
+                style="width: 1.5rem; padding-left: 0.6rem; font-size: 17px"
+              ></i>
+              <span style="padding-left: 0.6rem" *ngIf="sideBarStatus"
+                >Dashboards</span
+              >
+            </span>
+            <span style="padding-right: 0.8rem"
+              ><i class="fa fa-angle-down"></i
+            ></span>
+          </a>
+          <ul
+            (click)="changeMainNavColor('submenu1')"
+            class="collapse hide nav"
+            id="submenu1"
+            data-bs-parent="#menu"
+          >
+            <!-- <li
+              class="w-100 sub-heading"
+              routerLink="/git-dashboard"
+              routerLinkActive="active"
+              style="padding-left: 0.6rem; margin-bottom: 3px"
+              [ngClass]="check('/git-dashboard')"
+            >
+              <a
+                routerLink="/git-dashboard"
+                routerLinkActive="active"
+                class="nav-link px-0"
+                >Git Dashboard</a
+              >
+            </li> -->
+            <li
+              class="w-100 sub-heading"
+              routerLink="/git-analytics-dashboard"
+              routerLinkActive="active"
+              style="
+                padding-left: 0.6rem;
+                margin-bottom: 3px;
+                &:hover {
+                  background-color: none;
+                }
+              "
+              [ngClass]="check('/git-analytics-dashboard')"
+            >
+              <a
+                routerLink="/git-analytics-dashboard"
+                routerLinkActive="active"
+                class="nav-link px-0"
+                >Code Review Analytics</a
+              >
+            </li>
+            <li
+              class="w-100 sub-heading"
+              routerLink="/code-quality-summary"
+              routerLinkActive="active"
+              style="
+                padding-left: 0.6rem;
+                margin-bottom: 3px;
+                &:hover {
+                  background-color: none;
+                }
+              "
+              [ngClass]="check('/code-quality-summary')"
+            >
+              <a
+                routerLink="/code-quality-summary"
+                routerLinkActive="active"
+                class="nav-link px-0"
+              >
+                Code Quality Summary
+              </a>
+            </li>
+            <li
+              class="w-100 sub-heading"
+              routerLink="/engineering-productivity-summary"
+              routerLinkActive="active"
+              style="
+                padding-left: 0.6rem;
+                margin-bottom: 3px;
+                &:hover {
+                  background-color: none;
+                }
+              "
+              [ngClass]="check('/engineering-productivity-summary')"
+            >
+              <a
+                routerLink="/engineering-productivity-summary"
+                routerLinkActive="active"
+                class="nav-link px-0"
+              >
+                Engineering Productivity Summary
+              </a>
+            </li>
+            <li
+              class="w-100 sub-heading"
+              routerLink="/security-and-compliance"
+              routerLinkActive="active"
+              style="
+                padding-left: 0.6rem;
+                margin-bottom: 3px;
+                &:hover {
+                  background-color: none;
+                }
+              "
+              [ngClass]="check('/security-and-compliance')"
+            >
+              <a
+                routerLink="/security-and-compliance"
+                routerLinkActive="active"
+                class="nav-link px-0"
+              >
+                Security and Compliance
+              </a>
+            </li>
+            <li
+              class="w-100 sub-heading"
+              routerLink="/engineering-productivity-resource"
+              routerLinkActive="active"
+              style="
+                padding-left: 0.6rem;
+                margin-bottom: 3px;
+                &:hover {
+                  background-color: none;
+                }
+              "
+              [ngClass]="check('/engineering-productivity-resource')"
+            >
+              <a
+                routerLink="/engineering-productivity-resource"
+                routerLinkActive="active"
+                class="nav-link px-0"
+              >
+                Engineering Productivity By Resource
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <!-- <li class="nav-item">
+        <div style="width: 14rem;" [ngClass]="{'sub-header-selected':subheader2}">
+          <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 sub-heading" style="justify-content: space-between;
+                display: flex;">
+            <span class="d-sm-inline" style="font-weight: 600;">
+              <i class="fa fa-gear" style="width: 1.5rem; padding-left: 0.6rem; font-size: 17px;"></i>
+              <span style="padding-left: 0.6rem;" *ngIf="sideBarStatus">Setting</span>
+            </span>
+            <span style="padding-right: 0.8rem;"><i class="fa fa-angle-down"></i></span>
+          </a>
+          <ul (click)="changeMainNavColor('submenu1')" class="collapse hide nav" id="submenu1" data-bs-parent="#menu">
+            <li class="w-100 sub-heading" routerLink="/metabase-home" routerLinkActive="active"
+              style="padding-left: 0.6rem; margin-bottom: 3px;" [ngClass]="check('/metabase-home')">
+              <a routerLink="/metabase-home" routerLinkActive="active" class="nav-link px-0">Configration</a>
+            </li>
+            <li class="w-100 sub-heading" routerLink="/git-dashboard" routerLinkActive="active"
+              style="padding-left: 0.6rem; margin-bottom: 3px;" [ngClass]="check('/git-dashboard')">
+              <a routerLink="/git-dashboard" routerLinkActive="active" class="nav-link px-0">Git
+                Dashboard</a>
+            </li>
+            <li class="w-100 sub-heading" routerLink="/git-analytics-dashboard" routerLinkActive="active"
+              style="padding-left: 0.6rem; margin-bottom: 3px; &:hover { background-color: none;}"
+              [ngClass]="check('/git-analytics-dashboard')">
+              <a routerLink="/git-analytics-dashboard" routerLinkActive="active" class="nav-link px-0">Github
+                analytics
+                dashboard</a>
+            </li>
+            <li class="w-100 sub-heading" routerLink="/connections" routerLinkActive="active"
+              style="padding-left: 0.6rem; margin-bottom: 3px; &:hover { background-color: none;}"
+              [ngClass]="check('/connections')">
+              <a routerLink="/connections" routerLinkActive="active" class="nav-link px-0">connections</a>
+            </li>
+          </ul>
+        </div>
+      </li> -->
+      <li class="nav-item">
+        <div
+          style="width: 14rem"
+          [ngClass]="{ 'sub-header-selected': subheader3 }"
+        >
+          <a
+            href="#submenu3"
+            data-bs-toggle="collapse"
+            class="nav-link px-0 sub-heading"
+            style="justify-content: space-between; display: flex"
+          >
+            <span class="d-sm-inline" style="font-weight: 600">
+              <i
+                class="fa fa-newspaper-o"
+                style="width: 1.5rem; padding-left: 0.6rem"
+              ></i>
+              <span style="padding-left: 0.6rem" *ngIf="sideBarStatus"
+                >Kibana</span
+              >
+            </span>
+            <span style="padding-right: 0.8rem"
+              ><i class="fa fa-angle-down"></i
+            ></span>
+          </a>
+          <ul
+            (click)="changeMainNavColor('submenu3')"
+            class="collapse hide nav"
+            id="submenu3"
+            data-bs-parent="#menu"
+          >
+            <li
+              class="w-100 sub-heading"
+              routerLink="/kibana-overview"
+              routerLinkActive="active"
+              style="padding-left: 0.6rem; margin-bottom: 3px"
+              [ngClass]="check('/kibana-overview')"
+            >
+              <a [href]="iframeKibanaURl" target="_blank" class="nav-link px-0"
+                >kibana-overview</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <div
+          *ngIf="hasKeycloakAdminPermission"
+          style="width: 14rem"
+          [ngClass]="{ 'sub-header-selected': subheader2 }"
+        >
+          <a
+            href="#submenu2"
+            data-bs-toggle="collapse"
+            class="nav-link px-0 sub-heading"
+            style="justify-content: space-between; display: flex"
+          >
+            <span class="d-sm-inline" style="font-weight: 600">
+              <i
+                class="fa fa-solid fa-gear"
+                style="width: 1.5rem; padding-left: 0.6rem; font-size: large"
+              ></i>
+              <span style="padding-left: 0.6rem" *ngIf="sideBarStatus"
+                >Settings</span
+              >
+            </span>
+            <span style="padding-right: 0.8rem"
+              ><i class="fa fa-angle-down"></i
+            ></span>
+          </a>
+          <ul
+            (click)="changeMainNavColor('submenu2')"
+            class="collapse hide nav"
+            id="submenu2"
+            data-bs-parent="#menu"
+          >
+            <li
+              class="w-100 sub-heading"
+              routerLink="/metabase-configuration"
+              routerLinkActive="active"
+              style="padding-left: 0.6rem; margin-bottom: 3px"
+              [ngClass]="check('/metabase-configuration')"
+            >
+              <a
+                [href]="iframeMetabaseConfigurationURL"
+                target="_blank"
+                class="nav-link px-0"
+                >Configuration</a
+              >
+            </li>
+            <li
+              class="w-100 sub-heading"
+              routerLink="/airbyte-connections"
+              routerLinkActive="active"
+              style="padding-left: 0.6rem; margin-bottom: 3px"
+              [ngClass]="check('/airbyte-connections')"
+            >
+              <a
+                [href]="iframeAirbyteConnectionURL"
+                target="_blank"
+                class="nav-link px-0"
+                >Connections</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!sideBarStatus" style="margin-left: 6px">
+  <div (click)="clearIconSelection()">
+    <img
+      src="../../assets/Ideas2ITLogo.svg"
+      alt="Ideas2IT"
+      style="height: 2rem; cursor: pointer; margin-left: 3px"
+      routerLink="/home"
+      routerLinkActive="active"
+    />
+  </div>
+  <div
+    class="sub-heading"
+    style="margin-bottom: 1rem; margin-top: 1rem"
+    (click)="expandSideNavBar()"
+  >
+    <li
+      class="nav-item"
+      routerLink="/home"
+      routerLinkActive="active"
+      (click)="clearSelection()"
+      [ngClass]="'/home' === routerUrl ? 'selected' : ''"
+    >
+      <a class="nav-link sub-heading" style="cursor: pointer">
+        <span class="d-sm-inline" style="font-weight: 600">
+          <i
+            class="fa fa-home"
+            style="width: 2rem; padding-left: 0.4rem; font-size: 18px"
+          ></i>
+        </span>
+      </a>
+    </li>
+  </div>
+  <div style="margin-bottom: 1rem; margin-top: 1rem">
+    <div>
+      <li class="nav-item">
+        <div (click)="expandSideNavBar()">
+          <li
+            class="nav-item"
+            routerLinkActive="active"
+            [ngClass]="{ 'sub-header-selected': subheader1 }"
+          >
+            <a
+              data-bs-toggle="collapse"
+              class="nav-link px-0 sub-heading"
+              style="justify-content: space-between; display: flex"
+            >
+              <span
+                class="d-sm-inline"
+                style="font-weight: 600; cursor: pointer"
+              >
+                <i
+                  class="fa fa-dashboard"
+                  style="width: 2rem; padding-left: 0.45rem; font-size: 17px"
+                ></i>
+              </span>
+            </a>
+          </li>
+        </div>
+      </li>
+      <li class="nav-item">
+        <div (click)="expandSideNavBar()">
+          <li
+            class="nav-item"
+            routerLinkActive="active"
+            [ngClass]="{ 'sub-header-selected': subheader3 }"
+          >
+            <a
+              data-bs-toggle="collapse"
+              class="nav-link px-0 sub-heading"
+              style="justify-content: space-between; display: flex"
+            >
+              <span
+                class="d-sm-inline"
+                style="font-weight: 600; cursor: pointer"
+              >
+                <i
+                  class="fa fa-newspaper-o"
+                  style="width: 2rem; padding-left: 0.4rem"
+                ></i>
+              </span>
+            </a>
+          </li>
+        </div>
+      </li>
+      <li class="nav-item">
+        <div (click)="expandSideNavBar()">
+          <li
+            *ngIf="hasKeycloakAdminPermission"
+            class="nav-item"
+            routerLink="/connections"
+            routerLinkActive="active"
+            [ngClass]="{ 'sub-header-selected': subheader2 }"
+          >
+            <a
+              data-bs-toggle="collapse"
+              class="nav-link px-0 sub-heading"
+              style="justify-content: space-between; display: flex"
+            >
+              <span
+                class="d-sm-inline"
+                style="font-weight: 600; cursor: pointer"
+              >
+                <i
+                  class="fa fa-gear"
+                  style="width: 2rem; padding-left: 0.4rem; font-size: large"
+                ></i>
+              </span>
+            </a>
+          </li>
+        </div>
+      </li>
+    </div>
+  </div>
+</div>

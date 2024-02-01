@@ -1,0 +1,106 @@
+li {
+    list-style: none;
+    line-height: 2.5;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+ul {
+    li {
+        line-height: 1;
+    }
+}
+
+.collapse {
+
+    span,
+    .nav-link,
+    a {
+        // color: white;
+        color: black;
+
+        &:hover {
+            // color: white;
+        }
+
+    }
+}
+
+.nav {
+    --bs-nav-link-color: white !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.dark-mode-theme {
+    color: white;
+}
+
+
+
+.sub-heading {
+    &:hover {
+        // background-color: #005688;
+        border-radius: 4px;
+        color: black;
+        background-color: #4c748d;
+    }
+}
+
+.sub-header-selected {
+    background-color: #478eba;
+    border-radius: 10px;
+}
+
+.selected {
+    background-color: #003a5d;
+    border-radius: 4px;
+    color: white;
+
+    a {
+        color: white !important;
+    }
+
+    a:hover {
+        color: #000 !important;
+    }
+
+    .active {
+        color: black;
+    }
+}
+
+.selectedStyleForDarkModeTheme {
+    background-color: #E8E8E8;
+    border-radius: 4px;
+    color: #000 !important;
+
+    .active {
+        color: white;
+    }
+}
+
+// .active {
+//     color: black;
+// }
+
+.inactive {
+    a {
+        // color: white !important;
+    }
+}

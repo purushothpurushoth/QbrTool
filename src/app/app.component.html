@@ -1,0 +1,23 @@
+<div class="sidebar" [ngClass]="{ 'sidebar-closed': !isSidebarOpen }">
+  <app-navigation
+    [isDarkModeTheme]="isDarkModeTheme"
+    [sideBarStatus]="isSidebarOpen"
+    (expandSideBar)="sideBarStatus($event)"
+  ></app-navigation>
+</div>
+<ngx-spinner bdColor="rgba(223,227,238,0.8)">
+  <!-- <span class="loader"></span> -->
+  <div class="la-triangle-skew-spin la-2x" style="margin-bottom: 100px">
+    <div></div>
+  </div>
+</ngx-spinner>
+<div [ngClass]="isSidebarOpen ? 'reduceWidth' : 'normalWidth'" #containerDiv>
+  <app-header
+    (sideBarStatus)="sideBarStatus($event)"
+    (themeMode)="themeMode($event)"
+  ></app-header>
+  <div id="a-main-container" class="m-10">
+    <router-outlet></router-outlet>
+  </div>
+  <!-- [ngStyle]="{'background-color': isDarkModeTheme ? '#37404a' : '#fcfcfc' }" -->
+</div>
