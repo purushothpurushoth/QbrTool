@@ -21,16 +21,7 @@ jobs:
       - name: Build Angular App
         run: npm run build
 
-      - name: Docker_Compose down
-        run: |
-          if sudo docker-compose ps -q webapp &> /dev/null; then
-             echo "Stopping and removing the webapp service."
-             sudo docker-compose down webapp
-          else
-              echo "The webapp service is not currently running."
-          fi
-
-
+    
       - name: Docker_Compose up
         run: docker-compose up -d
 
