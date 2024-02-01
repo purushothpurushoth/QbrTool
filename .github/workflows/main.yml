@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     name: Deploy to EC2 on master branch push
-    runs-on: I22249
+    runs-on: wsl_Machine
 
     steps:
       - name: Checkout
